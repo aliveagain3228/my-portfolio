@@ -1,0 +1,38 @@
+
+
+.bento-container {
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.span-full {
+  grid-column: 1 / -1;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-1 {
+  grid-column: span 1;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .bento-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .span-2, .tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
