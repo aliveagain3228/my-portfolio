@@ -7,8 +7,10 @@ import {
     SiTelegram,
     SiGithub,
     SiTailwindcss,
-    SiReacthookform, SiFigma, SiTypescript
+    SiReacthookform, SiFigma, SiTypescript, SiGmail
 } from "react-icons/si";
+import kanbanPreview from '../assets/kanban-board.png'
+import spiceCalcPreview from '../assets/SpiceCalc.png'
 
 export const softSkills = [
     {
@@ -53,11 +55,12 @@ export const techStack = [
     { id: 7, name: 'Tailwind', icon: <SiTailwindcss/>},
     { id: 9, name: 'React Hook Form', icon: <SiReacthookform/>},
     { id: 10, name: 'GitHub', icon: <SiGithub/>},
-    {id: 11, name: 'Figma', icon: <SiFigma/>}
+    {id: 11, name: 'Figma', icon: <SiFigma/>},
+    {id: 12, name: 'Typescript', icon: <SiTypescript/>}
 ]
 
 export const languages = [
-    {id: 1, name: 'Ukranian', level: 'Native', flag: <span className="fi fi-ua"></span>, progress: 100},
+    {id: 1, name: 'Ukrainian', level: 'Native', flag: <span className="fi fi-ua"></span>, progress: 100},
     {id: 2, name: 'Russian', level: 'Native', flag: <span className="fi fi-ru"></span>, progress: 100},
     {id: 3, name: 'English', level: 'B1', flag: <span className="fi fi-us"></span>, progress: 60},
 ]
@@ -84,20 +87,25 @@ export const projects = [
     {
         id: 1,
         name: 'Ingredients Calculator',
-        image: '',
+        description: 'A website designed to calculate the ingredients for a specific recipe. You can add your own recipes, edit them, delete them, and manage the list.',
+        image: spiceCalcPreview,
         techs: [<SiReact/>, <SiSass/>, <SiJavascript/>, <SiHtml5/>],
-        url: 'https://github.com/aliveagain3228/Ingredient-Calculator'
+        githubUrl: 'https://github.com/aliveagain3228/Ingredient-Calculator',
+        liveUrl: 'https://github.com/aliveagain3228/Ingredient-Calculator'
     },
     {
         id: 2,
         name: 'Kanban Board',
-        image: '',
+        description: 'A task management application built with React and TypeScript. Allows users to track their progress by dragging tasks between columns.',
+        image: kanbanPreview,
         techs: [<SiReact/>, <SiTailwindcss/>, <SiJavascript/>, <SiHtml5/>, <SiTypescript/>],
-        url: 'https://github.com/aliveagain3228/TodoReactTS'
+        githubUrl: 'https://github.com/aliveagain3228/TodoReactTS',
+        liveUrl: 'https://github.com/aliveagain3228/TodoReactTS'
     }
 ]
 
 export const socialLinks = [
     { id: 1, name: 'Telegram', icon:<SiTelegram/>, url: 'https://t.me/tellmewhy322' },
-    { id: 2, name: 'Github', icon:<SiGithub/>, url: 'https://github.com/aliveagain3228' }
+    { id: 2, name: 'Github', icon:<SiGithub/>, url: 'https://github.com/aliveagain3228' },
+    { id: 3, name: 'Gmail', icon:<SiGmail/>, url: 'mailto:kojda1337@gmail.com' }
 ]

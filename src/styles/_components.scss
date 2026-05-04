@@ -535,6 +535,12 @@ html {
   overflow: hidden;
   background: var(--text-accent);
   border-radius: 12px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .project-title {
@@ -555,14 +561,17 @@ html {
 .project-link-button {
   text-decoration: none;
   padding: 10px 20px;
-  background-color: var(--bg-card-hover);
+  background-color: var(--text-accent);
+  border: 1px solid var(--text-accent);
   border-radius: var(--radius-bento);
   transition: var(--transition-fast);
   width: fit-content;
-  color: var(--text-primary);
+  color: #FFFFFF;
+  font-weight: 600;
 
   &:hover {
-    transform: translateY(-5px) scale(1.1);
+    transform: translateY(-5px) scale(1.05);
+    background-color: transparent;;
     color: var(--text-accent)
   }
 }

@@ -138,7 +138,7 @@ export default function App() {
                                                 <div className="project-info">
                                                     <h4 className="project-title">{proj.name}</h4>
                                                     <p className="project-desc">
-                                                        A website designed to calculate the ingredients for a specific recipe. You can add your own recipes, edit them, delete them, and manage the list.
+                                                        {proj.description}
                                                     </p>
                                                     <div className="project-techs">
                                                         {proj.techs.map((icon, index) => (
@@ -150,6 +150,12 @@ export default function App() {
                                                     </a>
                                                 </div>
                                                 <div className="project-preview">
+                                                    {proj.image && (
+                                                        <img
+                                                            src={proj.image}
+                                                            alt=""
+                                                        />
+                                                    )}
                                                 </div>
                                             </div>
                                         </AnimatedItem>
