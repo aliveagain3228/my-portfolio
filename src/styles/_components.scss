@@ -567,12 +567,46 @@ html {
   transition: var(--transition-fast);
   width: fit-content;
   color: #FFFFFF;
+  font-size: 0.9rem;
   font-weight: 600;
 
   &:hover {
     transform: translateY(-5px) scale(1.05);
     background-color: transparent;;
     color: var(--text-accent)
+  }
+}
+
+.project-link-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-link-button.primary {
+  background: var(--text-accent);
+  color: white;
+  border-color: var(--text-accent);
+
+  &:hover {
+    background-color: #818CF8;
+    border-color: #818CF8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  }
+}
+
+.project-link-button.secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+
+  &:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -661,4 +695,14 @@ html {
 
 .experience-card {
   border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .project-buttons {
+    flex-direction: column;
+  }
+
+  .project-link-button {
+    width: 100%;
+  }
 }

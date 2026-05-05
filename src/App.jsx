@@ -145,9 +145,14 @@ export default function App() {
                                                             <span key={index} className="tech-icon">{icon}</span>
                                                         ))}
                                                     </div>
-                                                    <a href={proj.url} target="_blank" className="project-link-button">
-                                                        View code
-                                                    </a>
+                                                    <div className="project-buttons">
+                                                        <a href={proj.githubUrl} target="_blank" className="project-link-button primary">
+                                                            <span>Github</span>
+                                                        </a>
+                                                        <a href={proj.liveUrl} target="_blank" className="project-link-button secondary">
+                                                            <span>Live Demo</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                                 <div className="project-preview">
                                                     {proj.image && (
