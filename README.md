@@ -17,27 +17,27 @@
 
 </div>
 
-## 🎨 О проекте
+## 🎨 About project
 
-Мое личное портфолио, созданное для демонстрации проектов и навыков. Дизайн вдохновлен **индустриальным минимализмом**: чистые линии, строгая типографика и акцент на контенте.
+My personal portfolio, created to showcase my projects and skills. The design is inspired by **industrial minimalism**: clean lines, clean typography, and a focus on content.
 
-### 📸 Главный экран
+### 📸 Main screen
 
 <img src="./public/preview.png" alt="Portfolio Preview" width="800"/>
 
-## 🚀 Стек технологий
+## 🚀 Technology stack
 
 - **Frontend:** React 19, TypeScript.
-- **Стилизация:** Tailwind CSS (Custom UI Components).
-- **Анимации:** Framer Motion для плавных переходов.
-- **Инструменты:** Vite, GitHub Pages для деплоя.
+- **Styling:** Tailwind CSS (Custom UI Components).
+- **Animations:** Framer Motion for smooth transitions.
+- **Tools:** Vite, GitHub Pages for deploy.
 
-## 📁 Основные проекты в портфолио
+## 📁 Main projects in the portfolio
 
-- **Spice Calc:** Калькулятор специй с динамическим расчетом.
-- **Kanban Board:** Система управления задачами с полной типизацией.
+- **Spice Calc:** Spice calculator with dynamic calculation.
+- **Kanban Board:** A fully typed task management system.
 
-## 🛠 Запуск проекта
+## 🛠 Project launch
 
 ```bash
 git clone [https://github.com/aliveagain3228/my-portfolio.git](https://github.com/aliveagain3228/my-portfolio.git)
