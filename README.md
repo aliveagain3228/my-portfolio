@@ -1,50 +1,46 @@
-# 💼 Personal Portfolio — Nikita Koida
+<div align="center">
 
-![GitHub Repo Size](https://img.shields.io/github/repo-size/aliveagain3228/ForWork?style=flat-square)
-![GitHub License](https://img.shields.io/github/license/aliveagain3228/ForWork?style=flat-square)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+# 🌐 Personal Portfolio
 
-> Современное портфолио Frontend-разработчика с фокусом на Bento-дизайн, плавные анимации и безупречную производительность.
+  <p>
+    <a href="https://aliveagain3228.github.io/my-portfolio/" target="_blank">
+      <img src="https://img.shields.io/badge/Live_Site-Visit-007ACC?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Site" />
+    </a>
+  </p>
 
----
+  <p>
+    <img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+  </p>
 
-## 🌟 О проекте
-Проект создан для демонстрации навыков в разработке интерфейсов. Основной упор сделан на эстетику **Bento Grid** (в стиле Apple/Vercel) и высокую скорость работы благодаря сборщику Vite.
+</div>
 
-### ✨ Ключевые фишки:
-*   **Bento Grid Layout** — адаптивная плиточная сетка, вдохновленная современными интерфейсами iOS/macOS. 
-*   **GSAP & Framer Motion** — продвинутые анимации появления элементов и плавных переходов между секциями.
-*   **Theme Switcher** — поддержка темной и светлой тем с автоматическим сохранением выбора в `localStorage`.
-*   **TypeWriter Effect** — динамическая смена текста в Hero-секции для привлечения внимания.
-*   **SEO & Accessibility** — семантическая верстка и использование ARIA-атрибутов для доступности.
+## 🎨 О проекте
 
----
+Мое личное портфолио, созданное для демонстрации проектов и навыков. Дизайн вдохновлен **индустриальным минимализмом**: чистые линии, строгая типографика и акцент на контенте.
 
-## 🛠️ Технологический стек
+### 📸 Главный экран
 
-### Frontend
-* **React (v18+)** — UI библиотека для создания реактивных интерфейсов.
-* **JavaScript (ES6+)** — основная логика и манипуляция данными.
-* **SCSS/Sass** — модульная архитектура стилей с использованием переменных и миксинов[cite: 3].
-* **Tailwind CSS** — для быстрой и гибкой верстки отдельных компонентов.
-* **React Icons** — библиотека иконок (Simple Icons).
+<img src="./public/preview.png" alt="Portfolio Preview" width="800"/>
 
-### Инструменты
-* **Vite** — сверхбыстрый инструмент сборки и сервер для разработки.
-* **GSAP** — библиотека для сложных таймлайн-анимаций.
-* **GitHub Actions** — автоматизация деплоя на GitHub Pages.
+## 🚀 Стек технологий
 
----
+- **Frontend:** React 19, TypeScript.
+- **Стилизация:** Tailwind CSS (Custom UI Components).
+- **Анимации:** Framer Motion для плавных переходов.
+- **Инструменты:** Vite, GitHub Pages для деплоя.
 
-## 📂 Структура проекта
+## 📁 Основные проекты в портфолио
+
+- **Spice Calc:** Калькулятор специй с динамическим расчетом.
+- **Kanban Board:** Система управления задачами с полной типизацией.
+
+## 🛠 Запуск проекта
 
 ```bash
-portfolio/
-├── src/
-│   ├── assets/          # Изображения, иконки и шрифты
-│   ├── components/      # UI-компоненты (BentoCard, Loader, TypeWriter)
-│   ├── sections/        # Основные блоки страницы (Header, Hero, Projects)
-│   ├── styles/          # SCSS стили (_variables, _base, _grid)[cite: 3]
-│   ├── constants/       # Контент проекта (тексты, ссылки, данные)
-│   └── App.jsx          # Главный логический компонент
-└── public/              # Статические файлы (favicon, роботы)
+git clone [https://github.com/aliveagain3228/my-portfolio.git](https://github.com/aliveagain3228/my-portfolio.git)
+cd my-portfolio
+npm install
+npm run dev
