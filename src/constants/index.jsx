@@ -91,7 +91,7 @@ export const projects = [
         image: spiceCalcPreview,
         techs: [<SiReact/>, <SiSass/>, <SiJavascript/>, <SiHtml5/>],
         githubUrl: 'https://github.com/aliveagain3228/Ingredient-Calculator',
-        liveUrl: 'https://github.com/aliveagain3228/Ingredient-Calculator'
+        liveUrl: 'https://aliveagain3228.github.io/Ingredient-Calculator/'
     },
     {
         id: 2,
@@ -100,7 +100,7 @@ export const projects = [
         image: kanbanPreview,
         techs: [<SiReact/>, <SiTailwindcss/>, <SiJavascript/>, <SiHtml5/>, <SiTypescript/>],
         githubUrl: 'https://github.com/aliveagain3228/TodoReactTS',
-        liveUrl: 'https://github.com/aliveagain3228/TodoReactTS'
+        liveUrl: 'https://aliveagain3228.github.io/TodoReactTS/'
     }
 ]
 
