@@ -2,18 +2,18 @@ import {useEffect, useState} from "react";
 import Header from "@/sections/Header.jsx";
 import BentoCard from "@/components/BentoCard.jsx";
 import '@/styles/index.scss'
-import {techStack, languages, projects, softSkills, socialLinks, experience} from '@/constants/index.jsx';
+import { techStack, languages, projects, socialLinks, SOFT_SKILL_KEYS, EXP_KEYS } from '@/constants/index.jsx';
 import AnimatedCard from "@/components/AnimatedCard.jsx";
 import AnimatedItem from "@/components/AnimatedItem.jsx";
 import PageLoader from "@/components/PageLoader.jsx";
 import TypeWritter from "@/components/TypeWritter.jsx";
 import heroImage from "@/assets/heroImage.jpg";
+import { LocaleProvider, useTranslation } from "@/context/LocaleContext.jsx";
 
-
-export default function App() {
+function AppContent() {
+    const { t } = useTranslation()
 
     const [isScrolled, setIsScrolled] = useState(false);
-
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
@@ -42,15 +42,15 @@ export default function App() {
                 <main className="bento-container">
 
 
-                        <AnimatedCard delay={0.1} data-section className="span-full">
+                    <AnimatedCard delay={0.1} data-section className="span-full">
                         <BentoCard className="hero-card">
                             <div className="hero-content">
                                 <h1>
-                                    <TypeWritter text="Hello, my name is Nikita Koida." />
+                                    <TypeWritter text={t('hero.text')} />
                                 </h1>
-                                <h2><TypeWritter text="Frontend Developer" /></h2>
+                                <h2><TypeWritter text={t('hero.role')} /></h2>
                                 <p>
-                                    I build modern, fast, and visually appealing web applications. I love writing clean code and creating cool animations.
+                                    {t('hero.description')}
                                 </p>
                             </div>
 
@@ -65,7 +65,7 @@ export default function App() {
                         <div className="skills-split-container">
                             <div className="skills-column">
                                 <h3 className="section-title">
-                                    Hard Skills
+                                    {t('sections.hardSkills')}
                                 </h3>
                                 <div className="skills-wrapper">
                                     {techStack.map(tech => (
@@ -78,12 +78,12 @@ export default function App() {
                             </div>
 
                             <div className="skills-column">
-                                <h3 className="section-title">Soft Skills</h3>
+                                <h3 className="section-title">{t('sections.softSkills')}</h3>
                                 <div className="soft-skills-list">
-                                    {softSkills.map(skill => (
-                                        <BentoCard key={skill.id} className="soft-skill-item">
-                                            <h4>{skill.title}</h4>
-                                            <p>{skill.description}</p>
+                                    {SOFT_SKILL_KEYS.map(key => (
+                                        <BentoCard key={key} className="soft-skill-item">
+                                            <h4>{t(`softSkills.${key}.title`)}</h4>
+                                            <p>{t(`softSkills.${key}.description`)}</p>
                                         </BentoCard>
                                     ))}
                                 </div>
@@ -94,7 +94,7 @@ export default function App() {
 
                     <AnimatedCard delay={0.3} data-section className="span-full">
                         <BentoCard className="languages-card">
-                            <h3>Language skills</h3>
+                            <h3>{t('sections.languages')}</h3>
                             <div className="languages-grid">
                                 {languages.map(lang => (
                                     <div key={lang.id} className="language-item">
@@ -111,82 +111,89 @@ export default function App() {
                         </BentoCard>
                     </AnimatedCard>
 
-                        <AnimatedCard id="experience" delay={0.4} data-section className="span-full">
-                            <BentoCard  className="experience-card">
-                                <h3>Work Experience</h3>
-                                <div className="experience-list">
-                                    {experience.map(exp => (
-                                        <div key={exp.id} className="experience-item">
-                                            <div className="exp-header">
-                                                <h4 className="exp-role">{exp.role}</h4>
-                                            </div>
-                                            <div className="exp-company">{exp.company}</div>
-                                            <p className="exp-desc">{exp.description}</p>
+                    <AnimatedCard id="experience" delay={0.4} data-section className="span-full">
+                        <BentoCard  className="experience-card">
+                            <h3>{t('sections.experience')}</h3>
+                            <div className="experience-list">
+                                {EXP_KEYS.map(key => (
+                                    <div key={key} className="experience-item">
+                                        <div className="exp-header">
+                                            <h4 className="exp-role">{t(`experience.${key}.role`)}</h4>
                                         </div>
-                                    ))}
-                                </div>
-                            </BentoCard>
-                        </AnimatedCard>
+                                        <div className="exp-company">{t(`experience.${key}.company`)}</div>
+                                        <p className="exp-desc">{t(`experience.${key}.description`)}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </BentoCard>
+                    </AnimatedCard>
 
-                        <AnimatedCard id="projects" className="span-full" data-section delay={0.5}>
-                            <BentoCard className="projects-card">
-                                <h3>My Projects</h3>
-                                <div className="project-list">
-                                    {projects.map(proj => (
-                                        <AnimatedItem key={proj.id}>
-                                            <div className="project-item">
-                                                <div className="project-info">
-                                                    <h4 className="project-title">{proj.name}</h4>
-                                                    <p className="project-desc">
-                                                        {proj.description}
-                                                    </p>
-                                                    <div className="project-techs">
-                                                        {proj.techs.map((icon, index) => (
-                                                            <span key={index} className="tech-icon">{icon}</span>
-                                                        ))}
-                                                    </div>
-                                                    <div className="project-buttons">
-                                                        <a href={proj.githubUrl} target="_blank" className="project-link-button primary">
-                                                            <span>Github</span>
-                                                        </a>
-                                                        <a href={proj.liveUrl} target="_blank" className="project-link-button secondary">
-                                                            <span>Live Demo</span>
-                                                        </a>
-                                                    </div>
+                    <AnimatedCard id="projects" className="span-full" data-section delay={0.5}>
+                        <BentoCard className="projects-card">
+                            <h3>{t('sections.projects')}</h3>
+                            <div className="project-list">
+                                {projects.map(proj => (
+                                    <AnimatedItem key={proj.id}>
+                                        <div className="project-item">
+                                            <div className="project-info">
+                                                <h4 className="project-title">{t(`projects.${proj.id}.name`)}</h4>
+                                                <p className="project-desc">
+                                                    {t(`projects.${proj.id}.description`)}
+                                                </p>
+                                                <div className="project-techs">
+                                                    {proj.techs.map((icon, index) => (
+                                                        <span key={index} className="tech-icon">{icon}</span>
+                                                    ))}
                                                 </div>
-                                                <div className="project-preview">
-                                                    {proj.image && (
-                                                        <img
-                                                            src={proj.image}
-                                                            alt=""
-                                                        />
-                                                    )}
+                                                <div className="project-buttons">
+                                                    <a href={proj.githubUrl} target="_blank" className="project-link-button primary">
+                                                        <span>{t('projects.github')}</span>
+                                                    </a>
+                                                    <a href={proj.liveUrl} target="_blank" className="project-link-button secondary">
+                                                        <span>{t('projects.live')}</span>
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </AnimatedItem>
-                                    ))}
-                                </div>
-                            </BentoCard>
-                        </AnimatedCard>
+                                            <div className="project-preview">
+                                                {proj.image && (
+                                                    <img
+                                                        src={proj.image}
+                                                        alt=""
+                                                    />
+                                                )}
+                                            </div>
+                                        </div>
+                                    </AnimatedItem>
+                                ))}
+                            </div>
+                        </BentoCard>
+                    </AnimatedCard>
 
-                        <AnimatedCard id="about" delay={0.6} data-section className="span-full">
-                            <BentoCard className="contact-section">
-                                <p className="contact-eyebrow">Do you have any questions for me?</p>
-                                <h3 className="contact-title">Contact me!</h3>
-                                <p className="contact-subtitle">Always open to collaboration</p>
-                                <div className="social-grid">
-                                    {socialLinks.map(link => (
-                                        <a key={link.id} href={link.url} className="social-item">
-                                            {link.icon} <span>{link.name}</span>
-                                        </a>
-                                    ))}
-                                </div>
-                            </BentoCard>
-                        </AnimatedCard>
+                    <AnimatedCard id="about" delay={0.6} data-section className="span-full">
+                        <BentoCard className="contact-section">
+                            <p className="contact-eyebrow">{t('contact.eyebrow')}</p>
+                            <h3 className="contact-title">{t('contact.title')}</h3>
+                            <p className="contact-subtitle">{t('contact.subtitle')}</p>
+                            <div className="social-grid">
+                                {socialLinks.map(link => (
+                                    <a key={link.id} href={link.url} className="social-item">
+                                        {link.icon} <span>{link.name}</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </BentoCard>
+                    </AnimatedCard>
                 </main>
             </>
-            )
+        )
+}
 
+export default function App() {
+    return (
+        <LocaleProvider>
+            <AppContent />
+        </LocaleProvider>
+    )
 }
 
 
