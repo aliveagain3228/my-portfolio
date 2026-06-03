@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HiMoon, HiSun } from "react-icons/hi";
+import { HiMoon, HiSun, HiTranslate } from "react-icons/hi";
 import myPicture from '@/assets/my-avatar.jpg'
 import { useTranslation } from "@/context/LocaleContext.jsx";
 
@@ -38,6 +38,7 @@ export default function Header ({  theme,isScrolled, onThemeToggle }) {
 
 
     const headerClass = `main-header ${isScrolled ? 'scrolled' : ''}`
+    const currentLang = LANGS.find(l => l.locale === locale)
 
     return (
         <header className={headerClass}>
@@ -58,9 +59,25 @@ export default function Header ({  theme,isScrolled, onThemeToggle }) {
             <div className="lang-switcher">
                 <button
                     onClick={() => setIsLangOpen(prev => !prev)}
-                    className="lang-switcher__toggle"
+                    className={`lang-switcher__toggle ${isLangOpen ? 'lang-switcher__toggle--open' : ''}`}
                 >
-                    {LANGS.map(l => l.locale === locale)?.flag} ▼
+                    <HiTranslate className="lang-switcher__globe" />
+                    <span className="lang-switcher__current">
+                        {currentLang?.flag}
+                    </span>
+                    <svg
+                        className={`lang-switcher__arrow ${isLangOpen ? 'lang-switcher__arrow--rotated' : ''}`}
+                        width="10" height="10" viewBox="0 0 10 10"
+                        fill="none"
+                    >
+                        <path
+                            d="M2 3.5L5 6.5L8 3.5"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                    </svg>
                 </button>
 
                 {isLangOpen && (

@@ -70,6 +70,14 @@ const en = {
             name: 'Kanban Board',
             description: 'A task management application built with React and TypeScript. Allows users to track their progress by dragging tasks between columns.',
         },
+        gymTracker: {
+            name: 'Gym Tracker',
+            description: 'Offline-first PWA for tracking gym workouts. Log exercises, sets, weight. Progress charts, 1RM calculator, exercise templates.',
+        },
+        moodTracker: {
+            name: 'Mood Tracker',
+            description: 'Track your daily mood and emotions. Visualize patterns over time with charts and calendar view.',
+        },
         github: 'Github',
         live: 'Live Demo',
     },

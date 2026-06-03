@@ -7,10 +7,14 @@ import {
     SiTelegram,
     SiGithub,
     SiTailwindcss,
+    SiVite,
+    SiFramer,
     SiReacthookform, SiFigma, SiTypescript, SiGmail
 } from "react-icons/si";
 import kanbanPreview from '../assets/kanban-board.png'
 import spiceCalcPreview from '../assets/SpiceCalc.png'
+import gymTrackerPreview from '../assets/gym-tracker.png'
+import moodTrackerPreview from '../assets/mood-tracker.png'
 
 export const SOFT_SKILL_KEYS = ['adaptability', 'communication', 'responsibility', 'criticism', 'knowledge', 'nonConflict']
 
@@ -26,7 +30,9 @@ export const techStack = [
     { id: 9, name: 'React Hook Form', icon: <SiReacthookform/>},
     { id: 10, name: 'GitHub', icon: <SiGithub/>},
     {id: 11, name: 'Figma', icon: <SiFigma/>},
-    {id: 12, name: 'Typescript', icon: <SiTypescript/>}
+    {id: 12, name: 'Typescript', icon: <SiTypescript/>},
+    {id: 13, name: 'Vite', icon: <SiVite />},
+    {id: 14, name: 'FramerMotion', icon: <SiFramer />},
 ]
 
 export const languages = [
@@ -51,7 +57,21 @@ export const projects = [
         techs: [<SiReact/>, <SiTailwindcss/>, <SiJavascript/>, <SiHtml5/>, <SiTypescript/>],
         githubUrl: 'https://github.com/aliveagain3228/TodoReactTS',
         liveUrl: 'https://aliveagain3228.github.io/TodoReactTS/'
-    }
+    },
+    {
+        id: 'gymTracker',
+        image: gymTrackerPreview,
+        techs: [<SiReact/>, <SiTypescript/>, <SiTailwindcss/>, <SiVite/>],
+        githubUrl: 'https://github.com/aliveagain3228/gym-tracker',
+        liveUrl: 'https://aliveagain3228.github.io/gym-tracker/'
+    },
+    {
+        id: 'moodTracker',
+        image: moodTrackerPreview,
+        techs: [<SiReact/>, <SiTypescript/>, <SiTailwindcss/>, <SiVite/>],
+        githubUrl: 'https://github.com/aliveagain3228/mood-tracker',
+        liveUrl: 'https://aliveagain3228.github.io/mood-tracker/'
+    },
 ]
 
 export const socialLinks = [
